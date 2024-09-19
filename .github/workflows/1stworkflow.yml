@@ -25,3 +25,12 @@ jobs:
               run: Write-Output "Executing Dependent Job"
             - name: Error Step
               run:  ls
+            - name: Error Step
+              run: echo "::error::Error Step"
+            - name: Warning Step
+              run: echo "::warning::Warning Step"
+            - name: Group of log lines
+              run: |
+                echo "::group::Grouping log lines"
+                echo "Inside group"
+                echo "::endgroup::"
