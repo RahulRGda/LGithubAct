@@ -16,7 +16,6 @@ jobs:
         steps:
             - name : View SW Version
               run: sw_vers
-
     dependent-job:
         needs: run-shell-command
         runs-on: windows-latest
@@ -25,6 +24,9 @@ jobs:
               run: Write-Output "Executing Dependent Job"
             - name: Error Step
               run:  ls
+    Workflow-actions:
+        runs-on: ubuntu-latest
+        steps:
             - name: Error Step
               run: echo "::error::Error Step"
             - name: Warning Step
