@@ -2,13 +2,26 @@ name:  1st_Workflow
 on: [push]
 
 jobs: 
-    build:
+    run-shell-command:
         runs-on: ubuntu-latest
-
         steps: 
             - name: echo a string"
-              run: echo "Executing 1st workflow"
+              run: echo "Executing run-shell-command"
             - name: Multiline Command
               run: |
                   node -v
                   npm -v
+    parellel-job-macos:
+        runs-on: macos-latest
+        steps:
+            - name : View SW Version
+              run: sw_vers
+
+    dependent-job:
+        needs: run-shell-command
+        runs-on: windows-latest
+        steps:
+            - name: echo a string"
+              run: Write-Output "Executing Dependent Job"
+            - name: Error Step
+              run:  doesnotexist
