@@ -1,9 +1,9 @@
 name : Shells and Directories
 on: [push]
 
-# defaults:
-#   run:
-#     shell: bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
     run-shell-command:
