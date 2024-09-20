@@ -17,13 +17,17 @@ jobs:
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
     run-shell-command-on-windows:
+       defaults:
+         run:
+           shell: bash
        runs-on: windows-latest
        steps:
            - name: Display Working Dir And List Files
              run: |
                pwd
-               $GITHUB_WORKSPACE
-               $GITHUB_SHA
-               $GITHUB_REPOSITORY
-               $GITHUB_STATE
-               $GITHUB_REF
+               ls -a
+               echo $GITHUB_WORKSPACE
+               echo $GITHUB_SHA
+               echo $GITHUB_REPOSITORY
+               echo $GITHUB_STATE
+               echo $GITHUB_REF
