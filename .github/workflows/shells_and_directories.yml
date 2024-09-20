@@ -1,9 +1,9 @@
 name : Shells and Directories
 on: [push]
 
-defaults:
-  run:
-    shell: bash
+# defaults:
+#   run:
+#     shell: bash
 
 jobs:
     run-shell-command:
@@ -12,11 +12,10 @@ jobs:
             - name: Display Working Dir And List Files
               run: |
                 pwd
+                ls -a 
                 echo $GITHUB_WORKSPACE
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
-                echo $GITHUB_STATE
-                echo $GITHUB_REF
     run-shell-command-on-windows:
        runs-on: windows-latest
        steps:
