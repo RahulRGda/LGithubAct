@@ -1,0 +1,20 @@
+name : Trying to Checkout the branch
+on: [push]
+
+jobs:
+    checkout:
+        runs-on: ubuntu-latest
+        env:
+          SECRET_VALUE : ${{ secrets.Secret_Key }}
+        steps: 
+         - name: Checking out to Main
+           run: |
+            echo "Before checkout"
+            ls -a
+            git init
+            git remote add origin https://github.com/RahulRGda/LGithubAct
+            git fetch origin main
+            git checkout origin/main
+            echo "After checkout"
+            ls -a
+            echo ${{ env.SECRET_VALUE }}
