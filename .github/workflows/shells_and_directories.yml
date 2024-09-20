@@ -1,0 +1,30 @@
+name : Shells and Directories
+on: [push]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+    run-shell-command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display Working Dir And List Files
+              run: |
+                pwd
+                $GITHUB_WORKSPACE
+                $GITHUB_SHA
+                $GITHUB_REPOSITORY
+                $GITHUB_STATE
+                $GITHUB_REF
+    run-shell-command-on-windows:
+       runs-on: windows-latest
+       steps:
+           - name: Display Working Dir And List Files
+             run: |
+               pwd
+               $GITHUB_WORKSPACE
+               $GITHUB_SHA
+               $GITHUB_REPOSITORY
+               $GITHUB_STATE
+               $GITHUB_REF
