@@ -15,6 +15,6 @@ jobs:
             git remote add origin https://github.com/RahulRGda/LGithubAct
             git fetch origin main
             git checkout origin/main
-            echo "After checkout"
+            echo "After checkout  ${{ env.SECRET_VALUE }}"
             ls -a
-            echo ${{ env.SECRET_VALUE }}
+            echo "Done"
